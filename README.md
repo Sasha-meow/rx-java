@@ -128,12 +128,12 @@ custom.rx/
         () -> System.out.println("  Поток завершён"));
 ```
 
-### just() - из элементов
+### just() - создание из элементов
 ```java
     Observable.just(1, 2, 3).subscribe(item -> System.out.println("  Число: " + item));
 ```
 
-### fromIterable() - из коллекции
+### fromIterable() - создание из коллекции
 ```java
     List<String> names = Arrays.asList("A", "B", "C");
     Observable.fromIterable(names).subscribe(name -> System.out.println("  Буква: " + name));
@@ -161,7 +161,7 @@ custom.rx/
         .subscribe(x -> System.out.print(x + " "));
 ```
 
-### subscribeOn()
+### subscribeOn() - задание потока для выполнения подписки
 ```java
     Observable.create(observer -> {
                 System.out.println("Генерация в: " + Thread.currentThread().getName());
@@ -172,7 +172,7 @@ custom.rx/
             .subscribe(x -> System.out.println("Получено: " + x));
 ```
 
-### observeOn()
+### observeOn() - задание потока для обработки элементов
 ```java
     Observable.just(1, 2, 3)
         .observeOn(Scheduler.single())
