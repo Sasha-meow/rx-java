@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+        "-//Checkstyle//DTD Suppressions 1.2//EN"
+        "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+
+<suppressions>
+    <!-- Подавление для тестов -->
+    <suppress files="[\\/]src[\\/]test[\\/]" checks="JavadocMethod"/>
+    <suppress files="[\\/]src[\\/]test[\\/]" checks="JavadocType"/>
+    <suppress files="[\\/]src[\\/]test[\\/]" checks="JavadocVariable"/>
+
+    <!-- Подавление для сгенерированного кода -->
+    <suppress files="[\\/]target[\\/]" checks=".*"/>
+
+    <!-- Временное подавление для длинных методов -->
+    <suppress files="Main\.java" checks="MagicNumber|MethodLength|WhitespaceAround"/>
+    <suppress files="Observable.java" checks="WhitespaceAround"/>
+</suppressions>
